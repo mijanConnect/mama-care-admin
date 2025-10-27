@@ -1,8 +1,8 @@
-import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // export const baseUrl = 'http://72.60.65.122:5001/api/v1';
-export const baseUrl = 'http://10.10.7.111:5002/api/v1';
-export const imageUrl = 'http://10.10.7.111:5002';
+export const baseUrl = "https://moshfiqur5002.binarybards.online/api/v1";
+export const imageUrl = "https://moshfiqur5002.binarybards.online";
 
 // Centralized base query with automatic token authorization
 export const baseQueryWithAuth = fetchBaseQuery({
@@ -10,9 +10,9 @@ export const baseQueryWithAuth = fetchBaseQuery({
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as any).auth.token;
     if (token) {
-      headers.set('authorization', `Bearer ${token}`);
+      headers.set("authorization", `Bearer ${token}`);
     }
-    headers.set('Content-Type', 'application/json');
+    headers.set("Content-Type", "application/json");
     return headers;
   },
 });
